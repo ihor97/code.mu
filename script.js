@@ -1,8 +1,10 @@
 /*
-Формат timestamp предназначен для нахождения разницы между датами.
+даты, представленные в виде объекта Date, 
+можно вычитать друг из друга, и результат их вычитания - разница в миллисекундах.
 */
 
-let now=new Date()
-let birth=new Date(1997,7,5)
-let diff=(now.getTime()-birth.getTime())/(1000*60*60*24*365)
+let now  = new Date();
+let date = new Date(2015, 4, 25, 12, 
+	59, 59); 
+let diff = now - date; 
 console.log(diff);

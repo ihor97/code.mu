@@ -1,12 +1,10 @@
-let date = new Date();
+let date=new Date()
+let hours,minutes,seconds,days,month,years
+date.getHours()<10 ? hours='0'+date.getHours() :hours=date.getHours()
+date.getMinutes()<10 ? minutes='0'+date.getMinutes() :minutes=date.getMinutes()
+date.getSeconds()<10 ? seconds='0'+date.getSeconds() :seconds=date.getSeconds()
+days=date.getDate()
+month=+date.getMonth()+1
+years=date.getFullYear()
 
-console.log(date.getFullYear()); // год
-console.log(date.getMonth());    // месяц
-console.log(date.getDate());     // день
-
-console.log(date.getHours());    // часы
-console.log(date.getMinutes());  // минуты
-console.log(date.getSeconds());  // секунды
-
-// Учтите, что месяц, который возвращает метод getMonth, 
-// начинается с нуля - январь нулевой, февраль первый и так далее.
+console.log(hours+':'+minutes+':'+seconds+' '+days+'.'+month+'.'+years);

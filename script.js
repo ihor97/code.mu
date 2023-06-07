@@ -1,22 +1,9 @@
 /*
-"Проверка корректности даты в JavaScript"
-Как вы знаете, JavaScript автоматически корректирует даты. 
-В нашем случае это значит, что 32 января автоматически станет 1 февраля.
+"День следующего или предыдущего года"
 
-Такое свойство JavaScript можно использовать для того, чтобы проверить дату на существование.
- Как будем проверять: создадим объект с датой и посмотрим, 
-поменялись ли части даты или нет
 
 */
 
-let year  = 2025;
-let month = 0;
-let day   = 32;
-
-let date = new Date(year, month, day);
-
-if (date.getFullYear() == year && date.getMonth() == month && date.getDate() == day) {
-	console.log('корректна');
-} else {
-	console.log('некорректна');
-}
+let date=new Date()
+date2=new Date(date.getFullYear()-1,date.getMonth(),date.getDate())
+console.log(date2.getDay());

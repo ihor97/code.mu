@@ -1,17 +1,8 @@
-// складний селектор 
 /*
-
+У DOM элементов есть свойство innerHTML, 
+позволяющее прочитывать HTML код этих элементов.
 */
-function func1() {
-	console.log(1);
-}
-
-function func2() {
-	console.log(2);
-}
-
-const but1=document.querySelector('#button1')
-const but2=document.querySelector('#button2')
-
-but1.addEventListener('click',func1)
-but2.addEventListener('click',func2)
+let elem = document.querySelector('#elem');
+console.log(elem.textContent);
+elem.innerHTML = '<i>!!!</i>';
+console.log(elem.textContent);

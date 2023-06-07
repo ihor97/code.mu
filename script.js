@@ -1,10 +1,10 @@
 /*
-Для того, чтобы поймать момент получения или потери фокуса 
-инпутом, в JavaScript предусмотрены специальные события: 
-cобытие focus позволяет отловить получение фокуса инпутом,
- а событие blur - потерю
+При работе с атрибутами существует исключение - 
+это атрибут class. 
+Это слово является специальным в JavaScript и 
+поэтому мы не можем просто написать elem.class,
+ чтобы считать значение атрибута class. 
+Вместо этого следует писать elem.className.
 */
 let elem = document.querySelector('#elem');
-elem.addEventListener('focus', function() {
-	console.log(elem.value);
-});
+console.log(elem.className);

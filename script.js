@@ -1,10 +1,11 @@
 /*
-При работе с атрибутами существует исключение - 
-это атрибут class. 
-Это слово является специальным в JavaScript и 
-поэтому мы не можем просто написать elem.class,
- чтобы считать значение атрибута class. 
-Вместо этого следует писать elem.className.
+Объект this удобен, когда элемент, 
+в котором произошло событие, и элемент, 
+с которым совершаются действия в результате события, -
+ это один и тот же элемент.
 */
 let elem = document.querySelector('#elem');
-console.log(elem.className);
+elem.addEventListener('blur', func);
+function func() {
+	console.log(this.value='cscscss'); 
+}

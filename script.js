@@ -1,10 +1,16 @@
 /*
-"Момент времени дня"
+"Конец дня в JavaScript"
 
 
 */
 // Определите, сколько часов прошло между вчерашним полднем и текущим моментом времени.
-let date1 = new Date();
-let date2 = new Date(date1.getFullYear(),date1.getMonth(),date1.getDate()-1,12 ); 
-
-console.log((date1 - date2)/3600000);
+// Как вы уже знаете, нули в таком случае можно опустить:
+{
+let now  = new Date();
+let date = new Date(now.getFullYear(), now.getMonth(), 
+	now.getDate() + 1); 
+// Кстати, полночью также будет является время 24:00:00 текущего дня:
+}
+let now  = new Date();
+let date = new Date(now.getFullYear(), now.getMonth(), 
+	now.getDate(), 24, 0, 0); 

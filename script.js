@@ -1,12 +1,21 @@
 /*
-Давайте теперь сделаем так, 
-чтобы обработчик события срабатывал на первый клик, 
-а потом отвязывался от кнопки. 
-Для этого существует специальный метод removeEventListener.
+Пусть мы хотим отвязать
+ эту функцию от абзаца после клика по этому абзацу.
+ Нас, однако, ждет проблема: у функции нет имени, 
+ а значит мы не сможем обратится к ней по этому имени, 
+ чтобы отвязать ее.
+
+Для решения проблему нужно дать имя функции, 
+сделав из нее именованное функциональное выражение. 
+Сделаем это:
+
 */
-let button = document.querySelector('#button');
-function func() {
-    this.value++
-    this.value==10&&button.removeEventListener('click',func)
+let elems = document.querySelectorAll('p');
+
+for (let elem of elems) {
+	elem.addEventListener('click', function func()
+		 { 
+		console.log(this.textContent);
+		this.removeEventListener('click', func); // отвязываем функцию 
+	});
 }
-button.addEventListener('click',func)

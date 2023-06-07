@@ -1,10 +1,13 @@
 /*
-
+Давайте теперь сделаем так, 
+чтобы обработчик события срабатывал на первый клик, 
+а потом отвязывался от кнопки. 
+Для этого существует специальный метод removeEventListener.
 */
-let elems = document.querySelectorAll('p');
+let button = document.querySelector('#button');
+button.addEventListener('click', func);
 
-for (let elem of elems) {
-	elem.addEventListener('click', function() {
-		console.log(this.textContent);
-	});
+function func() {
+	console.log('!!!');
+	this.removeEventListener('click', func);
 }

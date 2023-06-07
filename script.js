@@ -5,9 +5,8 @@
 Для этого существует специальный метод removeEventListener.
 */
 let button = document.querySelector('#button');
-button.addEventListener('click', func);
-
 function func() {
-	console.log('!!!');
-	this.removeEventListener('click', func);
+    this.value++
+    this.value==10&&button.removeEventListener('click',func)
 }
+button.addEventListener('click',func)

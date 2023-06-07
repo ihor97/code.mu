@@ -1,11 +1,18 @@
 /*
-Объект this удобен, когда элемент, 
-в котором произошло событие, и элемент, 
-с которым совершаются действия в результате события, -
- это один и тот же элемент.
+Получится, что у нас есть три кнопки. Нажатие на каждую кнопку будет приводить к вызову функции func. 
+При этом при каждом клике this будет содержать ссылку на ту кнопку, в которой произошло событие.
+
+То есть каждое нажатие будет выводить в консоль value той кнопки, на которой произошло нажатие, 
+но делать это будет одна и та же функция func! Вот в чем преимущество использования this.
 */
-let elem = document.querySelector('#elem');
-elem.addEventListener('blur', func);
+let button1 = document.querySelector('#button1');
+let button2 = document.querySelector('#button2');
+let button3 = document.querySelector('#button3');
+
+button1.addEventListener('click', func);
+button2.addEventListener('click', func);
+button3.addEventListener('click', func);
+
 function func() {
-	console.log(this.value='cscscss'); 
+	console.log(this.value);
 }

@@ -1,9 +1,10 @@
 /*
-"День следующего или предыдущего года"
+"Разность моментов"
 
 
 */
 
-let date=new Date()
-date2=new Date(date.getFullYear()-1,date.getMonth(),date.getDate())
-console.log(date2.getDay());
+let date1 = new Date();
+let date2 = new Date(2015, 4, 25, 12, 59, 59); 
+
+console.log(date1 - date2);

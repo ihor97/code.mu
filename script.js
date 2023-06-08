@@ -1,26 +1,25 @@
 
 /*
-Для того, чтобы полностью остановить обработку,
- современные браузеры поддерживают метод stopImmediatePropagation. 
- Он не только предотвращает всплытие, но и останавливает обработку событий 
- на текущем элементе. 
-Давайте его применим:
+Нас, однако, ждет неожиданный сюрприз: так как кнопка находится внутри родителя, 
+то клик по кнопке одновременно означает и клик по родителю. 
+Это значит, что сначала наш блок покажется, 
+а затем из-за всплытия события сработает обработчик в родителе и наш блок скроется.
 
-elem1.addEventListener('click', function() {
-	console.log('зеленый');
-});
-elem2.addEventListener('click', function(event) {
-	console.log('голубой - первый 
-		обработчик'); 
-	event.stopImmediatePropagation();     // остановим 
-		всплытие 
-});
-elem2.addEventListener('click', function() {
-	console.log('голубой - второй обработчик'); 
-		// уже не сработает 
-});
-elem3.addEventListener('click', function() {
-	console.log('красный');
-});
+Вот тут-то нам и пригодится возможность отменить всплытие: 
+мы можем сделать так, чтобы при клике на кнопку отменить всплытие, 
+родитель не реагировал на этот клик.
 */
 
+let parent = document.querySelector('#parent');
+let button = document.querySelector('button');
+let block  = document.querySelector('#block');
+
+button.addEventListener('click', function(e) {
+	block.classList.add('active');
+e.stopPropagation()
+
+});
+
+parent.addEventListener('click', function() {
+	block.classList.remove('active');
+});

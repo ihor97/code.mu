@@ -7,7 +7,16 @@ mouseover и так далее. Тип события содержит свой�
 
 
 */
-elem.addEventListener('click', function(event) {
-	console.log(event.type); // выведет 
-		'click' 
-});
+function func(e) {
+	if(e.type==='click'){
+		this.style.backgroundColor='green'
+	}
+	if(e.type==='dblclick'){
+		this.style.backgroundColor='red'
+	}
+}
+let elem = document.querySelector('#elem');
+
+elem.addEventListener('click', func.bind(elem));
+elem.addEventListener('dblclick', func.bind(elem));
+

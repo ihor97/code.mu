@@ -1,20 +1,18 @@
 
 /*
-Метод matches позволяет проверить, удовлетворяет ли элемент указанному CSS селектору.
+Всплытие события можно остановить на любой элемент, через который всплывает событие. 
+Для этого в коде элемента следует вызвать метод stopPropagation объекта Event.
 
-<p id="elem" class="www"></p>
-let elem = document.querySelector('#elem');
-console.log(elem.matches('p.www'));
-true
+elem1.addEventListener('click', function() {
+	console.log('зеленый');
+});
+elem2.addEventListener('click', function(event) {
+	console.log('голубой');
+	event.stopPropagation(); // остановим 
+		всплытие 
+});
+elem3.addEventListener('click', function() {
+	console.log('красный');
+});
 */
 
-let div = document.querySelector('div');
-
-div.addEventListener('click', function(event) {
-	if (event.target.matches('div')) {
-		console.log('клик именно по диву'); 
-	}
-	if (event.target.matches('p')) {
-		console.log('клик именно по абзацу'); 
-	}
-});

@@ -1,32 +1,28 @@
 
 /*
-Дело в том, что на самом деле this всегда содержит элемент, к 
-которому было привязано событие, а свойство target - элемент, по которому реально был клик. 
-Этот реальный элемент может совпадать с this, а может не совпадать.
+В свойстве key объекта с событием будет лежать нажатый символ:
+elem.addEventListener('keypress', function(event) {
+	console.log(event.key);
+});
 
-В описанном случае получится, что свойство target будет содержать конечный тег, 
-в котором случилось событие - то есть абзац, а не див
+А в свойстве code будет лежать код нажатой клавиши:
 
-Свойство tagName содержит имя тега в верхнем регистре (большими буквами).
+elem.addEventListener('keypress', function(event) {
+	console.log(event.code);
+});
+key -клавіша на клавіатурі
+code: 'KeyD'
+keyCode-номерний код клавіші
+
 */
+let elem = document.querySelector('input');
+let div = document.querySelector('div');
 
-// let elem = document.querySelector('#elem');
 
-// elem.addEventListener('click', function(event) {
-// 	console.log(event.target); // выведет  наш абзац 
-// 	console.log(this);         // выведет наш див 
-// });
-
-let elem = document.querySelector('#elem');
-
-elem.addEventListener('click',e=>{
-	if(e.target.tagName==='LI'){
-		e.target.textContent+='!'
-	}
-	
-	if(e.target.tagName==='UL'){
-		console.log('ul');
+elem.addEventListener('keypress', function (event) {
+	if (event.key === 'Enter') {
+		div.textContent =this.value
+		this.value=''
 	}
 
-})
-
+});

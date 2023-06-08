@@ -8,6 +8,3 @@ li {
 	border: 1px dashed black;
 }
 
-#block:not(.active) {
-	display: none;
-}

@@ -1,25 +1,35 @@
 
 /*
-Нас, однако, ждет неожиданный сюрприз: так как кнопка находится внутри родителя, 
-то клик по кнопке одновременно означает и клик по родителю. 
-Это значит, что сначала наш блок покажется, 
-а затем из-за всплытия события сработает обработчик в родителе и наш блок скроется.
+Кроме всплытия событий есть еще и погружение. 
+На самом деле событие сначала идет сверху вниз (стадия перехвата), 
+доходит до нашего элемента (стадия цели) и 
+только потом начинает всплывать (стадия всплытия).
 
-Вот тут-то нам и пригодится возможность отменить всплытие: 
-мы можем сделать так, чтобы при клике на кнопку отменить всплытие, 
-родитель не реагировал на этот клик.
+Для того, чтобы повесить обработчик события с учетом стадии перехвата
+ в addEventListener есть третий необязательный параметр. 
+ Если он равен true - событие сработает на стадии перехвата, 
+ а если false - на стадии всплытия (это по умолчанию).
+ Давайте посмотрим на примере:
+
+ elem1.addEventListener('click', function() {
+	console.log('зеленый - погружение');
+}, true);
+elem1.addEventListener('click', function() {
+	console.log('зеленый - всплытие');
+}, false);
+
+elem2.addEventListener('click', function() {
+	console.log('голубой - погружение');
+}, true);
+elem2.addEventListener('click', function() {
+	console.log('голубой - всплытие');
+}, false);
+
+elem3.addEventListener('click', function() {
+	console.log('красный - погружение');
+}, true);
+elem3.addEventListener('click', function() {
+	console.log('красный- всплытие');
+}, false);
 */
 
-let parent = document.querySelector('#parent');
-let button = document.querySelector('button');
-let block  = document.querySelector('#block');
-
-button.addEventListener('click', function(e) {
-	block.classList.add('active');
-e.stopPropagation()
-
-});
-
-parent.addEventListener('click', function() {
-	block.classList.remove('active');
-});

@@ -8,25 +8,13 @@ li {
 	border: 1px dashed black;
 }
 
-#elem1 {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
-    padding: 1px;
-    background: #97FF97;
+div {
+	padding: 20px;
+	border: 1px solid red;
 }
 
-#elem2 {
-    width: 140px;
-    height: 140px;
-    margin: 30px;
-    padding: 1px;
-    background: #7777FF;
-}
-#elem3 {
-    width: 80px;
-    height: 80px;
-    margin: 30px;
-    padding: 1px;
-    background: #FF7D7D;
+p {
+	width: 200px;
+	height: 200px;
+	border: 1px solid green;
 }

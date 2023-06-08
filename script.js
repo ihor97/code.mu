@@ -1,27 +1,20 @@
 
 /*
-Нажмите теперь на самый внутренний красный блок - и вы увидите, 
-как событие сначала сработает в красном блоке, потом в голубом, потом в зеленом. 
-И это логично, ведь кликая на внутренний блок, вы одновременно кликаете на все внешние.
+Метод matches позволяет проверить, удовлетворяет ли элемент указанному CSS селектору.
 
-То есть получается, что когда вы кликаете на самый внутренний блок, 
-событие клика возникает сначала в нем, затем срабатывает в его родителе,
- в родителе его родителя и так далее, пока не дойдет до самого верха.
-
-Такое поведение называется всплытием (англ. bubbling) событий 
-
+<p id="elem" class="www"></p>
+let elem = document.querySelector('#elem');
+console.log(elem.matches('p.www'));
+true
 */
 
-let elem1 = document.querySelector('#elem1');
-let elem2 = document.querySelector('#elem2');
-let elem3 = document.querySelector('#elem3');
+let div = document.querySelector('div');
 
-elem1.addEventListener('click', function() {
-	alert('зеленый');
-});
-elem2.addEventListener('click', function() {
-	alert('голубой');
-});
-elem3.addEventListener('click', function() {
-	alert('красный');
+div.addEventListener('click', function(event) {
+	if (event.target.matches('div')) {
+		console.log('клик именно по диву'); 
+	}
+	if (event.target.matches('p')) {
+		console.log('клик именно по абзацу'); 
+	}
 });

@@ -1,9 +1,8 @@
 
 /*
-Так как вызов child осуществляется в родительской функции, 
-то и передаваемый this указывает на то, что нужно. 
-Затем этот this попадает в параметр param и 
-в таком виде и будет доступен внутри функции.
+Третье решение проблемы заключается в использовании стрелочных функций, 
+которые не так давно появились в JavaScript. Такие функции, помимо всего прочего,
+ не имеют своего контекста, а сохраняют контекст родителя
 */ 
 
 
@@ -11,9 +10,12 @@ let elem = document.querySelector('#elem');
 elem.addEventListener('blur', parent);
 
 function parent() {
-	child(this); // передаем параметром this
+	console.log(this.value); // выведет 
+		'text' 
 	
-	function child(param) {
-		console.log(param.value); // выводим value инпута 
+	let child = () => {
+		console.log(this.value); // выведет 
+			'text' 
 	}
+	child();
 }

@@ -1,25 +1,19 @@
 
 /*
- во внешней функции запишем this в любую переменную и эта переменная 
- будет доступна во внутренней функции, как и все переменные (обычно эту 
-	переменную называют self).
-  Таким образом мы передадим this из внешней функции во внутреннюю:
+Так как вызов child осуществляется в родительской функции, 
+то и передаваемый this указывает на то, что нужно. 
+Затем этот this попадает в параметр param и 
+в таком виде и будет доступен внутри функции.
 */ 
 
-
-"use strict";
 
 let elem = document.querySelector('#elem');
 elem.addEventListener('blur', parent);
 
 function parent() {
-	console.log(this.value); // выведет 
-		'text' 
+	child(this); // передаем параметром this
 	
-	let self = this; // запишем this в любую переменную, например, в self 
-	
-	function child() {
-		console.log(self.value); // выведет 'text' 
+	function child(param) {
+		console.log(param.value); // выводим value инпута 
 	}
-	child();
 }

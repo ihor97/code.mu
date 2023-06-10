@@ -1,15 +1,13 @@
 /* 
-Функция, находящая сумму чисел с помощью операторов rest и spread в JavaScript
- */
-function func(...nums) {
-	let sum = 0;
-	
-	for (let num of nums) {
-		sum += num;
-	}
-	
-	return sum;
-}
+Давайте сделаем функцию unite, которая параметрами будет принимать 
+произвольное количество массивов 
+и сливать их в один двухмерный 
+*/
 
-let result = func(1, 2, 3);
-console.log(result); // выведет 6
+let result = unite([1, 2, 3], [4, 
+	5, 6], [7, 8, 9]); 
+console.log(result); // выведет 	[ [1, 2, 3,] [4, 5, 6], [7, 8, 9] ] 
+
+function unite(...arrs) {
+	return arrs;
+}

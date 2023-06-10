@@ -1,10 +1,8 @@
 /* 
-різні варіанти застосування
+Экстремальные значения массива через spread в JavaScript
 
 
 */
 
-function func(num1, num2, num3) {
-	return num1 + num2 + num3;
-}
-func(...[1, 2], ...[3, 4, 5]);
+let arr = [1, 2, 3, 4, 5]
+let max = Math.max(...arr);

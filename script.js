@@ -4,10 +4,10 @@
 и сливать их в один двухмерный 
 */
 
-let result = unite([1, 2, 3], [4, 
-	5, 6], [7, 8, 9]); 
-console.log(result); // выведет 	[ [1, 2, 3,] [4, 5, 6], [7, 8, 9] ] 
-
-function unite(...arrs) {
-	return arrs;
+function merge(...arrs) {
+	return [].concat(...arrs);
 }
+
+let result = merge([1, 2, 3], [4, 
+	5, 6], [7, 8, 9]); 
+console.log(result);

@@ -1,7 +1,8 @@
 /*
-Метод setAttribute позволяет изменить значение заданного атрибута какого-либо тега.
+Метод removeAttribute удаляет заданный атрибут у какого-либо тега.
+
 */ 
 
 let elem = document.querySelector('#elem');
-elem.setAttribute('value', '!!!');
+elem.removeAttribute('value');
 console.log(elem);

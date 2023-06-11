@@ -1,8 +1,7 @@
 /*
-Метод removeAttribute удаляет заданный атрибут у какого-либо тега.
-
+Метод hasAttribute проверяет наличие заданного атрибута у 
+элемента. Если атрибут есть - выведет true, если нет - выведет false.
 */ 
 
 let elem = document.querySelector('#elem');
-elem.removeAttribute('value');
-console.log(elem);
+console.log(elem.hasAttribute('value'));

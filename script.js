@@ -1,8 +1,7 @@
 /*
-Метод getAttribute считывает значение заданного атрибута у тега.
+Метод setAttribute позволяет изменить значение заданного атрибута какого-либо тега.
 */ 
 
 let elem = document.querySelector('#elem');
-let value = elem.getAttribute('value');
-
-console.log(value);
+elem.setAttribute('value', '!!!');
+console.log(elem);

@@ -1,9 +1,10 @@
 /*
-К пользовательским атрибутам можно также обращаться с помощью методов типа getAttribute,
- в этом случае следует писать полное название атрибута:
+Свойство classList содержит псевдомассив CSS классов элемента, 
+а также позволяет добавлять и удалять классы элемента,
+ проверять наличие определенного класса среди классов элемента.
 */ 
 
 let elem = document.querySelector('#elem');
 
-console.log(elem.getAttribute('data-num'));    // выведет 1000 
-console.log(elem.getAttribute('data-my-num')); // выведет 2000
+let length = elem.classList.length;
+console.log(length);

@@ -1,8 +1,8 @@
 /*
-Свойства, которые записываются через дефис, например font-size, 
-преобразуются в camelCase. То есть font-size станет fontSize:
+Свойство float является исключением, так как оно является специальным в JavaScript. 
+Для него следует писать cssFloat:
 
 
 */ 
 let elem = document.querySelector('#elem');
-elem.style.fontSize = '20px';
+elem.style.cssFloat = 'right';

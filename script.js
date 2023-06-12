@@ -1,11 +1,14 @@
 /*
-Метод contains позволяет проверить, содержит ли один элемент внутри себя другой.
- Параметром метода передается элемент, который будет проверяться на то,
- что он находится внутри элемента, к которому применился метод.
+Свойство previousElementSibling содержит предыдущий элемент, 
+находящийся в этом же родителе. Если такого элемента нет - возвращается null.
+
+Если соседа сверху нет или он расположен не в родителе нашего элемента, также возвращается null:
+
+Свойство nextElementSibling содержит следующий элемент, находящийся в этом же родителе.
+ Если такого элемента нет - возвращается null.
 */ 
 
-let parent = document.querySelector('#parent');
-let child = document.querySelector('#child');
+let elem = document.querySelector('#elem');
+let text = elem.previousElementSibling.textContent;
 
-let contains = parent.contains(child);
-console.log(contains);
+console.log(text);

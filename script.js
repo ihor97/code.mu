@@ -1,12 +1,11 @@
 /*
-Свойство parentElement содержит родительский элемент.
-
-Свойство parentNode содержит родительский элемент. 
-Существует также почти идентичное свойство parentElement. Отличия: 
-для тега html свойство parentNode возвращает document, а parentElement возвращает null.
+Метод contains позволяет проверить, содержит ли один элемент внутри себя другой.
+ Параметром метода передается элемент, который будет проверяться на то,
+ что он находится внутри элемента, к которому применился метод.
 */ 
 
-let elem = document.querySelector('#elem');
-let id = elem.parentElement.id;
+let parent = document.querySelector('#parent');
+let child = document.querySelector('#child');
 
-console.log(id);
+let contains = parent.contains(child);
+console.log(contains);

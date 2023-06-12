@@ -1,10 +1,9 @@
 /*
-Свойство classList содержит псевдомассив CSS классов элемента, 
-а также позволяет добавлять и удалять классы элемента,
- проверять наличие определенного класса среди классов элемента.
+Метод contains объекта classList проверяет наличие CSS класса элемента.
 */ 
 
 let elem = document.querySelector('#elem');
 
-let length = elem.classList.length;
-console.log(length);
+let contains = elem.classList.contains('ggg');
+
+console.log(contains);

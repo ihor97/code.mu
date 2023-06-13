@@ -1,9 +1,17 @@
 /*
-Следующее событие, которое мы с вами изучим, называется input.
- Оно возникает каждый раз при вводе нового символа в инпут или textarea.*/ 
+Вы уже знаете, что такое фокус ввода. Вы также знаете, 
+как установить или потерять фокус: для установки нужно нажать в поле ввода, 
+а для потери - в какое-то другое место.
 
- let elem = document.querySelector('#elem');
+В JavaScript, однако, существуют специальные методы, 
+которые позволяют принудительно установить фокус в инпут или убрать его оттуда.
+ Это методы focus и blur.
+ 
+ */ 
 
- elem.addEventListener('input', function() {
-     console.log(this.value);
+ let elem   = document.querySelector('#elem');
+ let button = document.querySelector('#button');
+ 
+ button.addEventListener('click', function() {
+     elem.focus();
  });

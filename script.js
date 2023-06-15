@@ -1,15 +1,15 @@
 /*
 
-Давайте теперь будем изменять выбранный пункт с 
-помощью JavaScript.
+В селектах существует специальное свойство selectedIndex, 
+хранящее в себе номер того пункта списка, который сейчас выбран.
+ Нумерация при этом начинается с нуля. При этом данное свойство можно как прочитывать,
+ так и записывать, меняя выбранный пункт списка.
 
 
 
 */ 
 
 let select = document.querySelector('#select');
-let button = document.querySelector('#button');
+console.log(select.selectedIndex); // выведет 1
 
-button.addEventListener('click', function() {
-	select.value = 'one';
-});
+select.selectedIndex = 2; // выберет 'три'

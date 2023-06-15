@@ -1,13 +1,15 @@
 /*
 
-Как правило, пунктам списка добавляют атрибут value. 
-В этом случае свойство value селекта будет содержать 
-не текст option, а значение его атрибута value.
+Давайте теперь будем изменять выбранный пункт с 
+помощью JavaScript.
+
+
 
 */ 
 
 let select = document.querySelector('#select');
+let button = document.querySelector('#button');
 
-select.addEventListener('change', function(){
-	console.log(this.value);
+button.addEventListener('click', function() {
+	select.value = 'one';
 });

@@ -1,15 +1,12 @@
 /*
 
-В этом случае в свойстве text будет хранится текст оптиона, в свойстве value - 
-значение одноименного атрибута, а в свойстве selected - 
-значение true или false в зависимости от того, выбранный пункт списка или нет:
+В предыдущих уроках мы обращались к тегу select, получая или меняя выбранный 
+пункт списка. Это на самом деле не обязательно. Ведь можно взять и непосредственно
+ какому-нибудь тегу option установить свойство selected в значении true.
 
 
 */ 
 
 let select = document.querySelector('#select');
-let option = select[0];
-
-console.log(option.text);
-console.log(option.value);
-console.log(option.selected);
+let option = select[2];
+option.selected = true;

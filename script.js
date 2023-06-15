@@ -1,12 +1,9 @@
 /*
 
-В предыдущих уроках мы обращались к тегу select, получая или меняя выбранный 
-пункт списка. Это на самом деле не обязательно. Ведь можно взять и непосредственно
- какому-нибудь тегу option установить свойство selected в значении true.
+Используя все изученное, можно получить выбранный тег option следующим образом:
 
 
 */ 
 
 let select = document.querySelector('#select');
-let option = select[2];
-option.selected = true;
+console.log(select[select.selectedIndex]);

@@ -1,15 +1,15 @@
 /*
 
-При работе с селектами есть следующая особенность: переменная,
- в которой хранится ссылка на селект является массивом, элементами которого 
- являются теги option. 
-Это значит, что эту переменную можно перебрать циклом:
+В этом случае в свойстве text будет хранится текст оптиона, в свойстве value - 
+значение одноименного атрибута, а в свойстве selected - 
+значение true или false в зависимости от того, выбранный пункт списка или нет:
 
 
 */ 
 
 let select = document.querySelector('#select');
+let option = select[0];
 
-for (let option of select) {
-	console.log(option.value);
-}
+console.log(option.text);
+console.log(option.value);
+console.log(option.selected);
